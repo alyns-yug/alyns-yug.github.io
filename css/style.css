@@ -274,6 +274,27 @@ div.work__img::after { content: "Фото работы"; font-family: var(--mono
 .b2b__item svg { width: 32px; height: 32px; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; margin-bottom: 18px; }
 .b2b__item p { margin-top: 10px; color: var(--muted); font-size: 15px; }
 
+/* ---------- Оборудование с фото ---------- */
+.ph {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 10px, var(--ph-line) 10px 11px),
+    var(--ph);
+  border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .1em;
+}
+.machines { display: grid; gap: 24px; }
+.machine { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); background: var(--surface); border: 1px solid var(--line); }
+.machine__photo { width: 100%; height: 100%; min-height: 280px; object-fit: cover; border: 0; border-right: 1px solid var(--line); }
+img.machine__photo { display: block; }
+.machine__body { padding: 32px 36px; display: flex; flex-direction: column; }
+.machine__model { margin-top: 6px; color: var(--accent); }
+.machine__spec { margin-top: 14px; color: var(--muted); }
+.machine__parts-title { margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.machine__parts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+.machine__parts > * { aspect-ratio: 1 / 1; width: 100%; object-fit: cover; display: block; }
+.machine__parts img { border: 1px solid var(--line); }
+
 /* ---------- Подвал ---------- */
 .footer { background: var(--dark); color: #8c8c8c; border-top: 1px solid #2c2d2f; font-size: 14px; }
 .footer__inner { display: flex; justify-content: space-between; padding: 28px 24px; }
@@ -338,6 +359,9 @@ div.work__img::after { content: "Фото работы"; font-family: var(--mono
   .stats { gap: 28px 16px; margin-top: 48px; }
   .why { grid-template-columns: 1fr; gap: 8px; }
   .b2b__list { grid-template-columns: 1fr; }
+  .machine { grid-template-columns: minmax(0, 1fr); }
+  .machine__photo { min-height: 0; aspect-ratio: 4 / 3; border-right: 0; border-bottom: 1px solid var(--line); }
+  .machine__body { padding: 24px; }
   .b2b__actions .btn { width: 100%; }
   .btn { white-space: normal; text-align: center; }
   .cta__actions, .cta__actions .btn { width: 100%; }

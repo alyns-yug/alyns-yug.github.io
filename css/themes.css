@@ -316,3 +316,11 @@ html[data-theme="modern"] .b2b__item { border: 0; border-radius: 24px; }
 html[data-theme="modern"] .b2b__item svg { stroke: var(--ink); background: var(--accent); border-radius: 12px; padding: 7px; width: 44px; height: 44px; }
 html[data-theme="dark"] .b2b__item { background: var(--surface); }
 @media (max-width: 760px) { html[data-theme="yellow"] h2 { overflow-wrap: anywhere; } }
+
+/* Оборудование — промышленный стиль */
+html[data-theme="yellow"] .machine { border: 2px solid #111; }
+html[data-theme="yellow"] .machine__photo { border-color: #111; border-width: 0 2px 0 0; }
+html[data-theme="yellow"] .machine h3 { font-size: 26px; }
+html[data-theme="yellow"] .machine__model { display: inline-block; align-self: flex-start; background: #111; color: #ffcc00; padding: 3px 8px; }
+html[data-theme="yellow"] .machine .ph { border-color: #c9c5b8; }
+@media (max-width: 760px) { html[data-theme="yellow"] .machine__photo { border-width: 0 0 2px 0; } }

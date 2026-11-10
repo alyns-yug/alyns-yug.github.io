@@ -238,13 +238,84 @@
           <p class="label">Производство</p>
           <h2>Оборудование и возможности</h2>
         </div>
-        <div class="equip">
-          <div class="equip__row"><div class="equip__name">Лазерная резка листа</div><div class="equip__spec">[Модель станка] · сталь до [__] мм, нержавейка до [__] мм, алюминий до [__] мм · рабочее поле [____ × ____] мм</div></div>
-          <div class="equip__row"><div class="equip__name">Лазерный труборез</div><div class="equip__spec">[Модель] · круглые трубы Ø [__–___] мм, профильные до [___ × ___] мм · длина до [__] м</div></div>
-          <div class="equip__row"><div class="equip__name">Токарные станки ЧПУ</div><div class="equip__spec">[Модель] · диаметр до [___] мм · длина до [___] мм</div></div>
-          <div class="equip__row"><div class="equip__name">Фрезерные станки ЧПУ</div><div class="equip__spec">[Модель] · рабочий стол [___ × ___] мм · [3/4/5]-осевая обработка</div></div>
-          <div class="equip__row"><div class="equip__name">Сварка</div><div class="equip__spec">[MIG/MAG, TIG, полуавтомат] · чёрная сталь, нержавейка, алюминий</div></div>
-          <div class="equip__row"><div class="equip__name">Гальваника</div><div class="equip__spec">[Цинкование, никелирование, хромирование, анодирование — что есть]</div></div>
+        <!--
+          КАК ВСТАВИТЬ ФОТО: положите файлы в images/ и замените
+          <div class="machine__photo ph"><span>Фото станка</span></div>  →  <img class="machine__photo" src="images/laser.jpg" alt="Лазерный станок">
+          <div class="ph ph--sm"></div>  →  <img src="images/laser-part-1.jpg" alt="Деталь">
+        -->
+        <div class="machines">
+          <article class="machine">
+            <div class="machine__photo ph"><span>Фото станка</span></div>
+            <div class="machine__body">
+              <h3>Лазерная резка листа</h3>
+              <p class="machine__model mono">[Модель станка]</p>
+              <p class="machine__spec">Сталь до [__] мм, нержавейка до [__] мм, алюминий до [__] мм · рабочее поле [____ × ____] мм</p>
+              <p class="machine__parts-title mono">Детали, сделанные на этом оборудовании</p>
+              <div class="machine__parts">
+                <div class="ph ph--sm"></div><div class="ph ph--sm"></div><div class="ph ph--sm"></div>
+              </div>
+            </div>
+          </article>
+          <article class="machine">
+            <div class="machine__photo ph"><span>Фото станка</span></div>
+            <div class="machine__body">
+              <h3>Лазерный труборез</h3>
+              <p class="machine__model mono">[Модель]</p>
+              <p class="machine__spec">Круглые трубы Ø [__–___] мм, профильные до [___ × ___] мм · длина заготовки до [__] м</p>
+              <p class="machine__parts-title mono">Детали, сделанные на этом оборудовании</p>
+              <div class="machine__parts">
+                <div class="ph ph--sm"></div><div class="ph ph--sm"></div><div class="ph ph--sm"></div>
+              </div>
+            </div>
+          </article>
+          <article class="machine">
+            <div class="machine__photo ph"><span>Фото станка</span></div>
+            <div class="machine__body">
+              <h3>Токарные станки ЧПУ</h3>
+              <p class="machine__model mono">[Модель]</p>
+              <p class="machine__spec">Диаметр обработки до [___] мм · длина до [___] мм</p>
+              <p class="machine__parts-title mono">Детали, сделанные на этом оборудовании</p>
+              <div class="machine__parts">
+                <div class="ph ph--sm"></div><div class="ph ph--sm"></div><div class="ph ph--sm"></div>
+              </div>
+            </div>
+          </article>
+          <article class="machine">
+            <div class="machine__photo ph"><span>Фото станка</span></div>
+            <div class="machine__body">
+              <h3>Фрезерные станки ЧПУ</h3>
+              <p class="machine__model mono">[Модель]</p>
+              <p class="machine__spec">Рабочий стол [___ × ___] мм · [3/4/5]-осевая обработка</p>
+              <p class="machine__parts-title mono">Детали, сделанные на этом оборудовании</p>
+              <div class="machine__parts">
+                <div class="ph ph--sm"></div><div class="ph ph--sm"></div><div class="ph ph--sm"></div>
+              </div>
+            </div>
+          </article>
+          <article class="machine">
+            <div class="machine__photo ph"><span>Фото станка</span></div>
+            <div class="machine__body">
+              <h3>Сварочный участок</h3>
+              <p class="machine__model mono">[Оборудование]</p>
+              <p class="machine__spec">[MIG/MAG, TIG, полуавтомат] · чёрная сталь, нержавейка, алюминий</p>
+              <p class="machine__parts-title mono">Детали, сделанные на этом оборудовании</p>
+              <div class="machine__parts">
+                <div class="ph ph--sm"></div><div class="ph ph--sm"></div><div class="ph ph--sm"></div>
+              </div>
+            </div>
+          </article>
+          <article class="machine">
+            <div class="machine__photo ph"><span>Фото станка</span></div>
+            <div class="machine__body">
+              <h3>Гальванический участок</h3>
+              <p class="machine__model mono">[Линия / ванны]</p>
+              <p class="machine__spec">[Цинкование, никелирование, хромирование, анодирование — что есть]</p>
+              <p class="machine__parts-title mono">Детали, сделанные на этом оборудовании</p>
+              <div class="machine__parts">
+                <div class="ph ph--sm"></div><div class="ph ph--sm"></div><div class="ph ph--sm"></div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
