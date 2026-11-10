@@ -135,6 +135,7 @@ p { margin: 0; }
   font-size: 18px; font-weight: 500;
 }
 .services__note p { max-width: 36em; }
+.services__actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ---------- Работы ---------- */
 .works { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -371,7 +372,7 @@ img.machine__photo { display: block; }
   .section__head { margin-bottom: 36px; }
   .services, .works, .steps { grid-template-columns: 1fr; }
   .step { margin-right: 0; }
-  .services__note .btn { width: 100%; }
+  .services__actions, .services__note .btn { width: 100%; }
   .contacts__list > div { grid-template-columns: 1fr; gap: 2px; }
   .contacts__maps .btn { width: 100%; }
   .contacts__map { min-height: 300px; }

@@ -328,3 +328,5 @@ html[data-theme="yellow"] .machine .ph { border-color: #c9c5b8; }
 /* Логотип в промышленном стиле: белый на чёрной шапке */
 html[data-theme="yellow"] .logo__icon { color: #fff; }
 html[data-theme="yellow"] .machine__list li::before { background: #111; }
+
+html[data-theme="yellow"] .services__note .btn--ghost { border: 2px solid #111; }
