@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/themes.css">
   <script src="js/config.js"></script>
-  <script>try{document.documentElement.setAttribute("data-theme",(localStorage.getItem("theme")||SITE.theme||"light"))}catch(e){document.documentElement.setAttribute("data-theme",SITE.theme||"light")}</script>
+  <script>try{document.documentElement.setAttribute("data-theme",(SITE.themeSwitcher&&localStorage.getItem("theme")||SITE.theme||"light"))}catch(e){document.documentElement.setAttribute("data-theme",SITE.theme||"light")}</script>
 </head>
 <body>
 
