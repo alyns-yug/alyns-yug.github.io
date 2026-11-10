@@ -86,6 +86,25 @@
     });
   }
 
+  // Увеличение фото деталей по нажатию
+  document.querySelectorAll(".machine__parts img").forEach(function (im) {
+    im.addEventListener("click", function () {
+      var box = document.createElement("div");
+      box.className = "lightbox";
+      var big = document.createElement("img");
+      big.src = im.src; big.alt = im.alt;
+      var close = document.createElement("button");
+      close.className = "lightbox__close"; close.type = "button"; close.textContent = "×";
+      close.setAttribute("aria-label", "Закрыть");
+      box.appendChild(big); box.appendChild(close);
+      var shut = function () { box.remove(); document.removeEventListener("keydown", onKey); };
+      var onKey = function (e) { if (e.key === "Escape") shut(); };
+      box.addEventListener("click", shut);
+      document.addEventListener("keydown", onKey);
+      document.body.appendChild(box);
+    });
+  });
+
   // Мобильное меню
   var burger = document.getElementById("burger");
   var nav = document.getElementById("nav");

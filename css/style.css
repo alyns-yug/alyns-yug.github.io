@@ -312,7 +312,11 @@ img.machine__photo { display: block; }
 .machine__parts-title { margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
 .machine__parts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
 .machine__parts > * { aspect-ratio: 1 / 1; width: 100%; object-fit: cover; display: block; }
-.machine__parts img { border: 1px solid var(--line); }
+.machine__parts img { border: 1px solid var(--line); cursor: zoom-in; }
+.machine__parts img.fit { object-fit: contain; background: #111; }
+.lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.88); display: flex; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+.lightbox__close { position: absolute; top: 16px; right: 16px; width: 48px; height: 48px; border: 0; background: #ffcc00; color: #111; font-size: 28px; font-weight: 700; cursor: pointer; }
 
 /* ---------- Логотип ---------- */
 .logo__icon { width: 36px; height: 36px; flex: none; color: var(--ink); }
