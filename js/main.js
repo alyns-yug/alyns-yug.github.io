@@ -5,7 +5,7 @@
   var phones = S.phones || [];
   var main = phones[0] || { number: "" };
   var tel = function (n) { return "tel:" + (n || "").replace(/[^\d+]/g, ""); };
-  var q = encodeURIComponent(S.address || "");
+  var q = encodeURIComponent(S.mapQuery || S.address || "");
 
   var links = {
     "phone-link": tel(main.number),
@@ -57,10 +57,11 @@
   // Карта Яндекса внутри сайта (на вашем домене загрузится автоматически)
   var map = document.getElementById("map");
   var isPreview = /claude/i.test(location.hostname);
-  if (map && S.lat && S.lon && !isPreview) {
+  if (map && !isPreview && (S.lat && S.lon || q)) {
     var frame = document.createElement("iframe");
-    frame.src = "https://yandex.ru/map-widget/v1/?ll=" + S.lon + "," + S.lat +
-      "&z=16&pt=" + S.lon + "," + S.lat + ",pm2rdm";
+    frame.src = (S.lat && S.lon)
+      ? "https://yandex.ru/map-widget/v1/?ll=" + S.lon + "," + S.lat + "&z=16&pt=" + S.lon + "," + S.lat + ",pm2rdm"
+      : "https://yandex.ru/map-widget/v1/?text=" + q + "&z=15";
     frame.title = "Карта";
     frame.loading = "lazy";
     map.appendChild(frame);
