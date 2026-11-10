@@ -60,7 +60,7 @@
   // Карта Яндекса внутри сайта (на вашем домене загрузится автоматически)
   var map = document.getElementById("map");
   var isPreview = /claude/i.test(location.hostname);
-  if (map && !isPreview && (S.lat && S.lon || q)) {
+  if (false && map && !isPreview && (S.lat && S.lon || q)) { // карта Яндекса отключена — показываем схему проезда
     var frame = document.createElement("iframe");
     frame.src = (S.lat && S.lon)
       ? "https://yandex.ru/map-widget/v1/?ll=" + S.lon + "," + S.lat + "&z=16&pt=" + S.lon + "," + S.lat + ",pm2rdm"
