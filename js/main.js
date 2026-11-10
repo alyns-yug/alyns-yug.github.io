@@ -16,10 +16,13 @@
     "yandex-link": (S.lat && S.lon)
       ? "https://yandex.ru/maps/?pt=" + S.lon + "," + S.lat + "&z=16&l=map&text=" + q
       : "https://yandex.ru/maps/?text=" + q,
+    "route-link": (S.lat && S.lon)
+      ? "https://yandex.ru/maps/?rtext=~" + S.lat + "," + S.lon + "&rtt=auto"
+      : "https://yandex.ru/maps/?rtext=~" + q + "&rtt=auto",
     "google-link": "https://www.google.com/maps/search/?api=1&query=" +
       ((S.lat && S.lon) ? S.lat + "," + S.lon : q)
   };
-  var external = { "tg-link": 1, "max-link": 1, "tgchannel-link": 1 };
+  var external = { "tg-link": 1, "max-link": 1, "tgchannel-link": 1, "route-link": 1 };
   var values = { phone: main.number };
 
   document.querySelectorAll("[data-site]").forEach(function (el) {
@@ -65,6 +68,22 @@
     frame.title = "Карта";
     frame.loading = "lazy";
     map.appendChild(frame);
+  }
+
+  // Отправить геолокацию: на телефоне — меню «Поделиться», на компьютере — копирует ссылку
+  var shareBtn = document.getElementById("share-geo");
+  if (shareBtn) {
+    var geoUrl = links["yandex-link"];
+    var geoText = (S.name || "") + ", " + (S.address || "") + " — корпус 1/3. " + geoUrl;
+    shareBtn.addEventListener("click", function () {
+      var note = document.getElementById("share-note");
+      var done = function (msg) { if (note) note.textContent = msg; };
+      if (navigator.share) {
+        navigator.share({ title: S.name, text: geoText, url: geoUrl }).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(geoText).then(function () { done("Ссылка на нашу точку скопирована — вставьте её в сообщение."); }, function () { done(geoUrl); });
+      } else { done(geoUrl); }
+    });
   }
 
   // Мобильное меню

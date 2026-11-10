@@ -168,6 +168,8 @@ div.work__img::after { content: "Фото работы"; font-family: var(--mono
 .contacts__list dd { margin: 0; font-weight: 600; }
 .contacts__list a:hover { color: var(--accent); }
 .contacts__maps { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.contacts__note { margin-top: 16px; color: #b5b5b5; font-size: 15px; }
+button.btn { font-family: inherit; background: transparent; }
 .contacts__map { position: relative; min-height: 420px; background: #1c1d1f; border: 1px solid #2c2d2f; overflow: hidden; }
 .contacts__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(1) contrast(1.05); }
 .map__fallback {
