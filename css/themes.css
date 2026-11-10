@@ -1,0 +1,318 @@
+/* ===========================================================
+   ВАРИАНТЫ ОФОРМЛЕНИЯ
+   Какой вариант включён — задаётся в js/config.js (theme).
+   1 = "light" — светлый строгий (основные стили в style.css)
+   2 = "dark"  — тёмный индустриальный
+   3 = "blue"  — инженерный синий
+   =========================================================== */
+
+/* ---------- Вариант 2: тёмный индустриальный ---------- */
+html[data-theme="dark"] {
+  --bg: #111213;
+  --surface: #17181a;
+  --ink: #f2f0ec;
+  --muted: #9a9894;
+  --line: #2a2b2e;
+  --accent: #ff7a1a;
+  --dark: #0a0a0b;
+  --on-ink: #111213;
+  --header-bg: rgba(17,18,19,.9);
+  --ph: #1c1d20;
+  --ph-line: rgba(255,255,255,.04);
+  --head: "Unbounded", var(--font);
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2 { font-weight: 700; letter-spacing: -0.02em; }
+html[data-theme="dark"] .hero__grid .hero__title { font-size: clamp(26px, 3.1vw, 44px); line-height: 1.12; }
+html[data-theme="dark"] h2 { font-size: clamp(26px, 3.2vw, 38px); }
+html[data-theme="dark"] h3 { font-size: 18px; }
+html[data-theme="dark"] .logo { font-family: "Unbounded", var(--font); font-weight: 700; letter-spacing: 0; }
+html[data-theme="dark"] .logo__mark { background: var(--accent); }
+html[data-theme="dark"] .logo__mark::after { background: #fff; }
+html[data-theme="dark"] .hero {
+  background:
+    radial-gradient(900px 500px at 85% 20%, rgba(255,122,26,.12), transparent 60%),
+    var(--bg);
+}
+html[data-theme="dark"] .stats b { color: var(--accent); font-family: "Unbounded", var(--font); font-weight: 700; }
+html[data-theme="dark"] .btn--primary { background: var(--accent); color: #111; }
+html[data-theme="dark"] .btn--primary:hover { background: #fff; color: #111; }
+html[data-theme="dark"] .btn--ghost { border-color: #4a4b4f; }
+html[data-theme="dark"] .btn--ghost:hover { border-color: #fff; background: transparent; color: #fff; }
+html[data-theme="dark"] .service { background: var(--bg); }
+html[data-theme="dark"] .service:hover { background: var(--surface); }
+html[data-theme="dark"] .step { border-top-color: var(--accent); }
+html[data-theme="dark"] .equip { border-top-color: var(--accent); }
+html[data-theme="dark"] .section--dark { background: var(--dark); }
+html[data-theme="dark"] .cta { background: linear-gradient(100deg, #ff7a1a, #e04a12); }
+html[data-theme="dark"] .hero__media { border: 1px solid var(--line); }
+@media (max-width: 760px) {
+  html[data-theme="dark"] .hero__grid .hero__title { font-size: clamp(21px, 6.2vw, 32px); }
+  html[data-theme="dark"] .logo { font-size: 13px; }
+}
+
+/* ---------- Вариант 3: инженерный синий ---------- */
+html[data-theme="blue"] {
+  --bg: #ffffff;
+  --surface: #f2f5f9;
+  --ink: #0e1c2e;
+  --muted: #5b6878;
+  --line: #d9e0e8;
+  --accent: #1d5fd1;
+  --dark: #0c1a2c;
+  --on-ink: #ffffff;
+  --header-bg: rgba(255,255,255,.92);
+  --ph: #eef2f7;
+  --ph-line: rgba(29,95,209,.06);
+  --head: "IBM Plex Sans", var(--font);
+  --font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+html[data-theme="blue"] h1, html[data-theme="blue"] h2 { font-weight: 700; letter-spacing: -0.025em; }
+html[data-theme="blue"] .hero {
+  background-color: #f7f9fc;
+  background-image:
+    linear-gradient(rgba(29,95,209,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29,95,209,.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+html[data-theme="blue"] .btn--primary { background: var(--accent); }
+html[data-theme="blue"] .btn--primary:hover { background: var(--ink); }
+html[data-theme="blue"] .label::before { width: 8px; height: 8px; background: var(--accent); }
+html[data-theme="blue"] .logo__mark { background: var(--accent); }
+html[data-theme="blue"] .logo__mark::after { background: var(--ink); }
+html[data-theme="blue"] .service { background: #fff; }
+html[data-theme="blue"] .service:hover { background: var(--surface); }
+html[data-theme="blue"] .services { border-color: var(--line); }
+html[data-theme="blue"] .stats b { color: var(--accent); }
+html[data-theme="blue"] .hero__media { border: 6px solid #fff; box-shadow: 0 20px 50px rgba(14,28,46,.15); }
+html[data-theme="blue"] .section--alt { background: var(--surface); }
+html[data-theme="blue"] .step { border-top-color: var(--accent); }
+html[data-theme="blue"] .cta { background: var(--accent); }
+
+/* ---------- Переключатель вариантов (только для просмотра) ---------- */
+.theme-switch {
+  position: fixed; right: 16px; bottom: 16px; z-index: 100;
+  display: flex; gap: 4px; padding: 6px; background: #141414; border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25); font-family: "Manrope", sans-serif;
+}
+.theme-switch span { color: #9a9a9a; font-size: 12px; padding: 8px 6px 8px 8px; }
+.theme-switch button {
+  border: 0; background: #2a2a2a; color: #fff; font: 600 13px "Manrope", sans-serif;
+  padding: 8px 12px; border-radius: 3px; cursor: pointer;
+}
+.theme-switch button.is-active { background: #ff6a1a; }
+@media (max-width: 760px) { .theme-switch { bottom: 68px; right: 8px; } .theme-switch span { display: none; } }
+
+/* Кнопки на цветной полосе призыва — во всех вариантах */
+html[data-theme] .cta .btn--primary { background: #141414; color: #fff; }
+html[data-theme] .cta .btn--primary:hover { background: #fff; color: #141414; }
+html[data-theme] .cta .btn--ghost { border-color: #fff; color: #fff; }
+html[data-theme] .cta .btn--ghost:hover { background: #fff; color: #141414; }
+
+/* ===========================================================
+   Вариант 4: промышленный (чёрный + сигнальный жёлтый)
+   =========================================================== */
+html[data-theme="yellow"] {
+  --bg: #f3f1ea;
+  --surface: #ffffff;
+  --ink: #111111;
+  --muted: #555555;
+  --line: #111111;
+  --accent: #ffcc00;
+  --dark: #111111;
+  --on-ink: #ffcc00;
+  --header-bg: #111111;
+  --ph: #e6e3da;
+  --ph-line: rgba(0,0,0,.06);
+  --head: "Oswald", "Arial Narrow", var(--font);
+}
+html[data-theme="yellow"] h1, html[data-theme="yellow"] h2, html[data-theme="yellow"] h3 {
+  text-transform: uppercase; letter-spacing: 0; font-weight: 700;
+}
+html[data-theme="yellow"] h2 { font-size: clamp(28px, 4.6vw, 56px); }
+html[data-theme="yellow"] h3 { font-size: 21px; font-weight: 600; }
+html[data-theme="yellow"] .hero__grid .hero__title { font-size: clamp(32px, 3.9vw, 56px); line-height: 1.04; overflow-wrap: anywhere; }
+
+/* шапка */
+html[data-theme="yellow"] .header { border-bottom: 0; color: #fff; }
+html[data-theme="yellow"] .nav a { color: #bbb; text-transform: uppercase; font-size: 14px; letter-spacing: .04em; }
+html[data-theme="yellow"] .nav a:hover, html[data-theme="yellow"] .header__phone:hover { color: #ffcc00; }
+html[data-theme="yellow"] .logo { font-family: "Oswald", var(--font); text-transform: uppercase; font-size: 20px; letter-spacing: .02em; }
+html[data-theme="yellow"] .logo__mark { background: #ffcc00; }
+html[data-theme="yellow"] .logo__mark::after { background: #fff; }
+html[data-theme="yellow"] .burger span { background: #fff; }
+
+/* первый экран — тёмный, снизу полоса «осторожно» */
+html[data-theme="yellow"] .hero {
+  background: #111; color: #fff; border-bottom: 0; position: relative;
+}
+html[data-theme="yellow"] .hero::after {
+  content: ""; display: block; height: 16px;
+  background: repeating-linear-gradient(-45deg, #ffcc00 0 20px, #111 20px 40px);
+}
+html[data-theme="yellow"] .hero__lead, html[data-theme="yellow"] .hero__hint { color: #b5b5b5; }
+html[data-theme="yellow"] .hero .label { color: #ffcc00; }
+html[data-theme="yellow"] .hero .btn--ghost { border-color: #fff; color: #fff; }
+html[data-theme="yellow"] .hero .btn--ghost:hover { background: #fff; color: #111; }
+html[data-theme="yellow"] .hero__media { border: 2px solid #ffcc00; }
+html[data-theme="yellow"] .hero__badge { background: #ffcc00; }
+html[data-theme="yellow"] .stats { border-top-color: #333; }
+html[data-theme="yellow"] .stats b { color: #ffcc00; font-family: "Oswald", var(--font); font-size: clamp(40px, 5vw, 64px); }
+html[data-theme="yellow"] .stats span { color: #b5b5b5; }
+
+/* кнопки */
+html[data-theme="yellow"] .btn { text-transform: uppercase; letter-spacing: .04em; font-size: 15px; font-weight: 700; }
+html[data-theme="yellow"] .btn--primary { background: #ffcc00; color: #111; border-color: #ffcc00; }
+html[data-theme="yellow"] .btn--primary:hover { background: #fff; border-color: #fff; color: #111; }
+html[data-theme="yellow"] .services__note .btn--primary { border-color: #111; }
+
+/* подписи разделов — чёрная плашка */
+html[data-theme="yellow"] .label { color: #111; }
+html[data-theme="yellow"] .label::before { width: 14px; height: 14px; background: #ffcc00; border: 2px solid #111; }
+
+/* карточки */
+html[data-theme="yellow"] .services { border-width: 2px; }
+html[data-theme="yellow"] .service { border-width: 0 2px 2px 0; background: #fff; }
+html[data-theme="yellow"] .service:hover { background: #ffcc00; }
+html[data-theme="yellow"] .service:hover .service__icon { stroke: #111; }
+html[data-theme="yellow"] .service p { color: #444; }
+html[data-theme="yellow"] .service__icon { stroke-width: 2.2; }
+html[data-theme="yellow"] .why__item { border-top: 4px solid #111; }
+html[data-theme="yellow"] .why__num, html[data-theme="yellow"] .step__num {
+  display: inline-block; background: #111; color: #ffcc00; padding: 4px 8px;
+}
+html[data-theme="yellow"] .step { border-top-width: 4px; }
+html[data-theme="yellow"] .work__img { border: 2px solid #111; }
+html[data-theme="yellow"] .equip { border-top-width: 4px; }
+html[data-theme="yellow"] .equip__row { border-bottom-color: #c9c5b8; }
+html[data-theme="yellow"] .equip__name { font-family: "Oswald", var(--font); text-transform: uppercase; font-weight: 600; font-size: 18px; }
+html[data-theme="yellow"] .faq details { border-color: #c9c5b8; }
+html[data-theme="yellow"] .faq summary::after { color: #111; font-weight: 700; }
+html[data-theme="yellow"] .section--alt { background: #fff; border-color: #111; border-width: 2px; }
+
+/* полоса призыва — жёлтая */
+html[data-theme="yellow"] .cta { background: #ffcc00; color: #111; }
+html[data-theme="yellow"] .cta .btn--primary { background: #111; color: #ffcc00; border-color: #111; }
+html[data-theme="yellow"] .cta .btn--primary:hover { background: #fff; color: #111; }
+html[data-theme="yellow"] .cta .btn--ghost { border: 2px solid #111; color: #111; }
+html[data-theme="yellow"] .cta .btn--ghost:hover { background: #111; color: #ffcc00; }
+html[data-theme="yellow"] .contacts .label::before { border-color: #ffcc00; }
+html[data-theme="yellow"] .contacts .label { color: #ffcc00; }
+html[data-theme="yellow"] .btn--light:hover { background: #ffcc00; color: #111; }
+@media (max-width: 760px) {
+  html[data-theme="yellow"] .nav { background: #111; border-color: #333; }
+  html[data-theme="yellow"] .nav a { color: #fff; border-color: #333; }
+  html[data-theme="yellow"] .hero__grid .hero__title { font-size: clamp(24px, 7.6vw, 38px); overflow-wrap: anywhere; }
+}
+
+/* ===========================================================
+   Вариант 5: модерн (скругления, мягкие карточки, салатовый)
+   =========================================================== */
+html[data-theme="modern"] {
+  --bg: #eceef1;
+  --surface: #ffffff;
+  --ink: #0f1115;
+  --muted: #5f6672;
+  --line: #dde0e5;
+  --accent: #c6f135;
+  --dark: #0f1115;
+  --on-ink: #ffffff;
+  --header-bg: rgba(236,238,241,.85);
+  --ph: #e3e6ea;
+  --ph-line: rgba(0,0,0,.03);
+  --font: "Onest", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --head: "Onest", var(--font);
+}
+html[data-theme="modern"] h1, html[data-theme="modern"] h2 { font-weight: 700; letter-spacing: -0.035em; }
+html[data-theme="modern"] .header { border-bottom: 0; }
+html[data-theme="modern"] .nav a { color: var(--ink); padding: 8px 14px; border-radius: 999px; transition: background .2s; }
+html[data-theme="modern"] .nav { gap: 4px; }
+html[data-theme="modern"] .nav a:hover { background: #fff; }
+html[data-theme="modern"] .logo__mark { border-radius: 8px; background: var(--ink); }
+html[data-theme="modern"] .logo__mark::after { border-radius: 50%; background: var(--accent); }
+
+html[data-theme="modern"] .btn { border-radius: 999px; padding: 15px 28px; }
+html[data-theme="modern"] .btn--primary:hover { background: var(--accent); color: var(--ink); }
+html[data-theme="modern"] .btn--ghost { border-color: transparent; background: #fff; }
+html[data-theme="modern"] .btn--ghost:hover { background: var(--ink); color: #fff; }
+
+html[data-theme="modern"] .label {
+  display: inline-flex; background: #fff; color: var(--ink); padding: 6px 14px 6px 10px; border-radius: 999px;
+  font-family: var(--font); text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 500;
+}
+html[data-theme="modern"] .label::before { width: 8px; height: 8px; border-radius: 50%; background: #7bc70a; }
+html[data-theme="modern"] .section--dark .label { background: #1d2026; color: #fff; }
+
+html[data-theme="modern"] .hero { border-bottom: 0; }
+html[data-theme="modern"] .hero__media { border-radius: 28px; }
+html[data-theme="modern"] .hero__badge { border-radius: 999px; left: 20px; bottom: 20px; }
+html[data-theme="modern"] .hero__badge::first-letter { color: #7bc70a; }
+html[data-theme="modern"] .stats { border-top: 0; gap: 12px; }
+html[data-theme="modern"] .stats li { background: #fff; border-radius: 20px; padding: 24px; }
+html[data-theme="modern"] .stats li:first-child { background: var(--accent); }
+html[data-theme="modern"] .stats li:first-child span { color: var(--ink); }
+
+html[data-theme="modern"] .services { border: 0; gap: 12px; }
+html[data-theme="modern"] .service { border: 0; border-radius: 24px; background: #fff; transition: transform .2s, box-shadow .2s; }
+html[data-theme="modern"] .service:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(15,17,21,.08); }
+html[data-theme="modern"] .service__icon {
+  background: var(--bg); border-radius: 14px; padding: 10px; width: 56px; height: 56px; stroke-width: 1.8;
+}
+html[data-theme="modern"] .service:hover .service__icon { background: var(--accent); stroke: var(--ink); }
+html[data-theme="modern"] .service__link:hover { color: #5f9a00; }
+
+html[data-theme="modern"] .why { gap: 12px; }
+html[data-theme="modern"] .why__item { border: 0; background: #fff; border-radius: 24px; padding: 28px; }
+html[data-theme="modern"] .why__num, html[data-theme="modern"] .step__num {
+  display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+  background: var(--accent); color: var(--ink); border-radius: 50%; font-weight: 500;
+}
+html[data-theme="modern"] .section--alt { background: transparent; border: 0; }
+html[data-theme="modern"] .works { gap: 16px; }
+html[data-theme="modern"] .work__img { border-radius: 20px; border: 0; }
+html[data-theme="modern"] .steps { gap: 12px; }
+html[data-theme="modern"] .step { border: 0; background: #fff; border-radius: 24px; padding: 28px; margin: 0; }
+
+html[data-theme="modern"] .equip { border: 0; background: #fff; border-radius: 24px; padding: 8px 28px; }
+html[data-theme="modern"] .equip__row:last-child { border-bottom: 0; }
+html[data-theme="modern"] .faq details, html[data-theme="modern"] .faq details:first-child {
+  border: 0; background: #fff; border-radius: 18px; margin-bottom: 8px; padding: 0 24px;
+}
+html[data-theme="modern"] .faq summary::after { color: var(--ink); }
+
+html[data-theme="modern"] .cta { background: transparent; color: var(--ink); padding: 0 0 40px; }
+html[data-theme="modern"] .cta__inner {
+  background: var(--accent); border-radius: 32px; padding: 56px 48px;
+  max-width: calc(var(--container) - 48px);
+}
+html[data-theme="modern"] .cta .btn--primary { background: var(--ink); color: #fff; }
+html[data-theme="modern"] .cta .btn--ghost { border-color: transparent; background: rgba(255,255,255,.6); color: var(--ink); }
+html[data-theme="modern"] .cta .btn--ghost:hover { background: #fff; color: var(--ink); }
+
+html[data-theme="modern"] .section--dark { margin: 0 12px 12px; border-radius: 32px; }
+html[data-theme="modern"] .contacts__map { border-radius: 24px; border: 0; }
+html[data-theme="modern"] .messenger { border-radius: 16px; }
+html[data-theme="modern"] .footer { background: transparent; color: var(--muted); border: 0; }
+html[data-theme="modern"] .footer a:hover { color: var(--ink); }
+html[data-theme="modern"] .btn--light:hover { background: var(--accent); color: var(--ink); }
+@media (max-width: 760px) {
+  html[data-theme="modern"] .cta__inner { width: auto; margin: 0 12px; padding: 36px 24px; border-radius: 24px; }
+  html[data-theme="modern"] .section--dark { margin: 0 8px 8px; border-radius: 24px; }
+  html[data-theme="modern"] .nav { background: var(--bg); }
+  html[data-theme="modern"] .stats li { padding: 18px; }
+}
+.theme-switch i { font-style: normal; }
+.theme-switch em { font-style: normal; }
+@media (max-width: 760px) { .theme-switch em { display: none; } .theme-switch button { padding: 8px 13px; } }
+
+/* Блок «Оптовикам» в разных стилях */
+html[data-theme="yellow"] .b2b__item { border: 2px solid #111; }
+html[data-theme="yellow"] .b2b__item svg { stroke: #111; stroke-width: 2; }
+html[data-theme="yellow"] .b2b__item:hover { background: #ffcc00; }
+html[data-theme="yellow"] .b2b__item:hover p { color: #111; }
+html[data-theme="modern"] .b2b { border: 0; }
+html[data-theme="modern"] .b2b__item { border: 0; border-radius: 24px; }
+html[data-theme="modern"] .b2b__item svg { stroke: var(--ink); background: var(--accent); border-radius: 12px; padding: 7px; width: 44px; height: 44px; }
+html[data-theme="dark"] .b2b__item { background: var(--surface); }
+@media (max-width: 760px) { html[data-theme="yellow"] h2 { overflow-wrap: anywhere; } }

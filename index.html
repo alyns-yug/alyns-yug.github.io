@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Альянс ЮГ — лазерная резка, ЧПУ, сварка, гальваника</title>
+  <meta name="description" content="Металлообработка полного цикла: лазерная резка листа и труб, токарная и фрезерная обработка на ЧПУ, сварка, гальваника. Изготовление деталей по чертежам — от единицы до серии.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Oswald:wght@500;600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <script src="js/config.js"></script>
+  <script>try{document.documentElement.setAttribute("data-theme",(localStorage.getItem("theme")||SITE.theme||"light"))}catch(e){document.documentElement.setAttribute("data-theme",SITE.theme||"light")}</script>
+</head>
+<body>
+
+  <!-- ===== ШАПКА ===== -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="logo">
+        <!-- Сюда позже вставим ваш логотип: <img src="images/logo.svg" alt="Логотип"> -->
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__text" data-site="name">Альянс ЮГ</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#services">Услуги</a>
+        <a href="#b2b">Оптовикам</a>
+        <a href="#works">Наши работы</a>
+        <a href="#equipment">Оборудование</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="header__phone" data-site="phone-link"><span data-site="phone">+7 (000) 000-00-00</span></a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== ПЕРВЫЙ ЭКРАН ===== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__grid">
+          <div class="hero__text">
+            <p class="label">Металлообработка полного цикла</p>
+            <h1 class="hero__title">Изготовим детали и&nbsp;металлоконструкции по&nbsp;вашим чертежам</h1>
+            <p class="hero__lead">Лазерная резка, токарная и фрезерная обработка на&nbsp;ЧПУ, сварка, гальваника — все этапы на&nbsp;одном производстве. От&nbsp;единичной детали до&nbsp;серии.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" data-site="tg-link">Отправить чертёж на расчёт</a>
+              <a class="btn btn--ghost" data-site="max-link">Написать в MAX</a>
+            </div>
+            <p class="hero__hint">Пришлите чертёж, фото или эскиз в Telegram — ответим с ценой и сроком.</p>
+          </div>
+          <!--
+            ВИДЕО С ПРОИЗВОДСТВА. Когда будет видео (короткое, 10–20 сек, без звука):
+            положите его в images/ и замените <div class="hero__media-ph">…</div> на
+            <video src="images/hero.mp4" autoplay muted loop playsinline poster="images/hero.jpg"></video>
+          -->
+          <div class="hero__media">
+            <div class="hero__media-ph">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 14l18 10-18 10z"/></svg>
+              <span>Видео с производства</span>
+            </div>
+            <span class="hero__badge mono">● Своё производство</span>
+          </div>
+        </div>
+        <!-- ЦИФРЫ: замените 00 на свои данные (или удалите ненужный пункт) -->
+        <ul class="stats">
+          <li><b>00</b><span>лет на рынке</span></li>
+          <li><b>00</b><span>единиц оборудования</span></li>
+          <li><b>0000</b><span>м² производственных площадей</span></li>
+          <li><b>000+</b><span>выполненных заказов</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== УСЛУГИ ===== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <p class="label">Услуги</p>
+          <h2>Что мы делаем</h2>
+        </div>
+        <div class="services">
+          <article class="service">
+            <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4v16M18 20h12l-6 8z"/><path d="M6 40h36M10 34l8-6m12 0l8 6" /></svg>
+            <h3>Лазерная резка металла</h3>
+            <p>Раскрой листового металла: сталь, нержавейка, алюминий. Точный рез, чистая кромка, детали любой формы.</p>
+            <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
+          </article>
+          <article class="service">
+            <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="12" cy="24" rx="5" ry="10"/><path d="M12 14h28M12 34h28"/><path d="M34 10l4 4-4 4" /></svg>
+            <h3>Лазерная резка труб</h3>
+            <p>Резка круглых и профильных труб на труборезе: отверстия, пазы, фигурные торцы, нарезка в размер.</p>
+            <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
+          </article>
+          <article class="service">
+            <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 36h36"/><path d="M14 36l10-14 10 14"/><path d="M24 22V8M20 12l4-4 4 4"/><circle cx="24" cy="28" r="2"/></svg>
+            <h3>Сварочные работы</h3>
+            <p>Сварка чёрных и нержавеющих сталей, алюминия. Металлоконструкции, рамы, корпуса, узлы.</p>
+            <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
+          </article>
+          <article class="service">
+            <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="18" width="10" height="12"/><path d="M14 20h22v8H14"/><path d="M36 22h8v4h-8"/><path d="M20 20v8M26 20v8"/></svg>
+            <h3>Токарная обработка ЧПУ</h3>
+            <p>Валы, втулки, фланцы, крепёж и детали вращения на станках с ЧПУ. Высокая точность и повторяемость.</p>
+            <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
+          </article>
+          <article class="service">
+            <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M20 4h8v14h-8z"/><path d="M22 18v6h4v-6"/><path d="M6 30h36v12H6z"/><path d="M16 30v-2h16v2"/></svg>
+            <h3>Фрезерная обработка ЧПУ</h3>
+            <p>Корпусные детали, пластины, пазы, карманы и сложные поверхности. Обработка по 3D-моделям.</p>
+            <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
+          </article>
+          <article class="service">
+            <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 14h32v26H8z"/><path d="M8 24h32"/><path d="M18 6v14M30 6v14"/><path d="M16 32c2-2 4 2 6 0s4 2 6 0 4 2 6 0"/></svg>
+            <h3>Гальваника</h3>
+            <p>Гальванические покрытия для защиты от коррозии и улучшения внешнего вида деталей.</p>
+            <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
+          </article>
+        </div>
+        <div class="services__note">
+          <p>Не нашли нужную операцию? Пришлите чертёж — скажем, что сможем сделать, и рассчитаем стоимость.</p>
+          <a class="btn btn--primary" data-site="tg-link">Написать в Telegram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ПОЧЕМУ МЫ ===== -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section__head">
+          <p class="label">Преимущества</p>
+          <h2>Почему заказывают у нас</h2>
+        </div>
+        <div class="why">
+          <div class="why__item"><span class="why__num mono">01</span><h3>Всё в одном месте</h3><p>Резка, обработка, сварка и покрытие — на одном заводе. Не нужно возить детали по разным подрядчикам.</p></div>
+          <div class="why__item"><span class="why__num mono">02</span><h3>Своё оборудование</h3><p>Работаем на собственных станках с ЧПУ — контролируем качество и сроки сами.</p></div>
+          <div class="why__item"><span class="why__num mono">03</span><h3>Любой объём</h3><p>Берём и единичные детали, и серийные заказы. Поможем доработать чертёж под технологию.</p></div>
+          <div class="why__item"><span class="why__num mono">04</span><h3>Быстрый расчёт</h3><p>Пришлите чертёж в Telegram — посчитаем стоимость и срок и ответим в рабочее время.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ДЛЯ ОПТОВЫХ ЗАКАЗЧИКОВ =====
+         Текст в [квадратных скобках] — уточните и замените. Ненужную карточку можно удалить целиком (от <div class="b2b__item"> до </div>) -->
+    <section class="section b2b" id="b2b">
+      <div class="container b2b__grid">
+        <div class="b2b__intro">
+          <p class="label">Для бизнеса</p>
+          <h2>Оптовым заказчикам и&nbsp;предприятиям</h2>
+          <p class="b2b__lead">Берём на себя изготовление деталей и металлоконструкций для производств, строительных и монтажных компаний, дилеров и сборочных цехов. Работаем по договору, с полным пакетом документов.</p>
+          <div class="b2b__actions">
+            <a class="btn btn--primary" data-site="tg-link">Запросить коммерческое предложение</a>
+            <a class="btn btn--ghost" data-site="max-link">Написать в MAX</a>
+          </div>
+          <p class="b2b__hint">Пришлите реквизиты и чертежи — подготовим КП с ценой за партию и сроками.</p>
+        </div>
+        <div class="b2b__list">
+          <div class="b2b__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg>
+            <h3>Договор и документы</h3>
+            <p>Работаем по договору. Счёт, УПД / акты, при необходимости — паспорта и сертификаты на материал.</p>
+          </div>
+          <div class="b2b__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M4 11h16M8 15h3"/></svg>
+            <h3>Оплата с НДС</h3>
+            <p>[Работаем с НДС / без НДС — уточните]. Безналичный расчёт для юридических лиц и ИП.</p>
+          </div>
+          <div class="b2b__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-5 9 5-9 5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/></svg>
+            <h3>Партии любого объёма</h3>
+            <p>От пробной партии до серийного выпуска. Фиксируем цену на повторяющиеся заказы.</p>
+          </div>
+          <div class="b2b__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+            <h3>Отсрочка платежа</h3>
+            <p>[Для постоянных клиентов — отсрочка по согласованию / уточните условия].</p>
+          </div>
+          <div class="b2b__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20l3-9h8l3 9"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg>
+            <h3>Работа с материалом</h3>
+            <p>Закупаем металл сами или работаем с вашим материалом (давальческое сырьё) — [уточните].</p>
+          </div>
+          <div class="b2b__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <h3>Персональный менеджер</h3>
+            <p>Один контакт по всем заказам: расчёт, сроки, статус производства и отгрузка.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== НАШИ РАБОТЫ ===== -->
+    <section class="section section--alt" id="works">
+      <div class="container">
+        <div class="section__head">
+          <p class="label">Портфолио</p>
+          <h2>Наши работы</h2>
+        </div>
+        <!--
+          Чтобы добавить фото: положите файл в папку images/
+          и замените <div class="work__img"></div> на
+          <img class="work__img" src="images/имя-файла.jpg" alt="Описание">
+        -->
+        <div class="works">
+          <figure class="work"><div class="work__img"></div><figcaption><span class="mono">Лазерная резка</span>Детали из листовой стали</figcaption></figure>
+          <figure class="work"><div class="work__img"></div><figcaption><span class="mono">Сварка</span>Металлоконструкция / рама</figcaption></figure>
+          <figure class="work"><div class="work__img"></div><figcaption><span class="mono">Токарная ЧПУ</span>Валы и втулки</figcaption></figure>
+          <figure class="work"><div class="work__img"></div><figcaption><span class="mono">Фрезерная ЧПУ</span>Корпусная деталь</figcaption></figure>
+          <figure class="work"><div class="work__img"></div><figcaption><span class="mono">Труборез</span>Профильная труба с отверстиями</figcaption></figure>
+          <figure class="work"><div class="work__img"></div><figcaption><span class="mono">Гальваника</span>Детали после покрытия</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== КАК МЫ РАБОТАЕМ ===== -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section__head">
+          <p class="label">Порядок работы</p>
+          <h2>Как мы работаем</h2>
+        </div>
+        <ol class="steps">
+          <li class="step"><span class="step__num mono">01</span><h3>Заявка</h3><p>Присылаете чертёж, эскиз, 3D-модель или фото образца в Telegram или звоните.</p></li>
+          <li class="step"><span class="step__num mono">02</span><h3>Расчёт</h3><p>Оцениваем технологию, сроки и стоимость, согласовываем детали.</p></li>
+          <li class="step"><span class="step__num mono">03</span><h3>Производство</h3><p>Изготавливаем изделие на своём оборудовании с контролем качества.</p></li>
+          <li class="step"><span class="step__num mono">04</span><h3>Отгрузка</h3><p>Самовывоз с производства или доставка до вашего адреса.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== ОБОРУДОВАНИЕ =====
+         Впишите свои станки и их возможности вместо текста в [квадратных скобках] -->
+    <section class="section section--alt" id="equipment">
+      <div class="container">
+        <div class="section__head">
+          <p class="label">Производство</p>
+          <h2>Оборудование и возможности</h2>
+        </div>
+        <div class="equip">
+          <div class="equip__row"><div class="equip__name">Лазерная резка листа</div><div class="equip__spec">[Модель станка] · сталь до [__] мм, нержавейка до [__] мм, алюминий до [__] мм · рабочее поле [____ × ____] мм</div></div>
+          <div class="equip__row"><div class="equip__name">Лазерный труборез</div><div class="equip__spec">[Модель] · круглые трубы Ø [__–___] мм, профильные до [___ × ___] мм · длина до [__] м</div></div>
+          <div class="equip__row"><div class="equip__name">Токарные станки ЧПУ</div><div class="equip__spec">[Модель] · диаметр до [___] мм · длина до [___] мм</div></div>
+          <div class="equip__row"><div class="equip__name">Фрезерные станки ЧПУ</div><div class="equip__spec">[Модель] · рабочий стол [___ × ___] мм · [3/4/5]-осевая обработка</div></div>
+          <div class="equip__row"><div class="equip__name">Сварка</div><div class="equip__spec">[MIG/MAG, TIG, полуавтомат] · чёрная сталь, нержавейка, алюминий</div></div>
+          <div class="equip__row"><div class="equip__name">Гальваника</div><div class="equip__spec">[Цинкование, никелирование, хромирование, анодирование — что есть]</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ВОПРОСЫ И ОТВЕТЫ ===== -->
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="section__head">
+          <p class="label">Вопросы</p>
+          <h2>Частые вопросы</h2>
+        </div>
+        <div class="faq">
+          <details><summary>Что нужно прислать для расчёта?</summary><p>Чертёж (PDF, DWG, DXF), 3D-модель (STEP) или просто фото и эскиз с размерами. Укажите материал и количество — этого достаточно, чтобы начать.</p></details>
+          <details><summary>Есть ли минимальный заказ?</summary><p>[Впишите ваш ответ: например, «Берём заказы от одной детали» или «Минимальная сумма заказа — ___ ₽».]</p></details>
+          <details><summary>Сколько занимает изготовление?</summary><p>Зависит от сложности и объёма. [Впишите: например, «Простые детали — от 1–3 дней, серийные заказы — по согласованию».] Точный срок называем при расчёте.</p></details>
+          <details><summary>Работаете с частными лицами?</summary><p>[Впишите: «Да, работаем и с компаниями, и с частными заказчиками».]</p></details>
+          <details><summary>Можно ли использовать наш материал?</summary><p>[Впишите ваш ответ: работаете ли с давальческим металлом.]</p></details>
+          <details><summary>Как оплатить и получить заказ?</summary><p>[Впишите: безналичный расчёт с НДС / без НДС, предоплата, самовывоз или доставка.]</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ПРИЗЫВ ===== -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <h2>Есть чертёж? Пришлите — рассчитаем стоимость</h2>
+        <div class="cta__actions">
+          <a class="btn btn--primary" data-site="tg-link">Telegram</a>
+          <a class="btn btn--ghost" data-site="max-link">MAX</a>
+          <a class="btn btn--ghost" data-site="phone-link"><span data-site="phone">+7 (000) 000-00-00</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== КОНТАКТЫ ===== -->
+    <section class="section section--dark" id="contacts">
+      <div class="container contacts">
+        <div class="contacts__info">
+          <p class="label label--light">Контакты</p>
+          <h2>Свяжитесь с нами</h2>
+          <dl class="contacts__list">
+            <div><dt>Телефоны</dt><dd><ul class="phones" id="phones"></ul></dd></div>
+            <div data-site="email-row"><dt>Почта</dt><dd><a data-site="email-link"><span data-site="email">info@example.ru</span></a></dd></div>
+            <div><dt>Адрес</dt><dd data-site="address">г. Москва, ул. Промышленная, 1</dd></div>
+            <div><dt>Режим работы</dt><dd data-site="hours">Пн–Пт 8:00–18:00</dd></div>
+          </dl>
+          <div class="messengers">
+            <a class="messenger" data-site="max-link"><span class="messenger__ico messenger__ico--max">M</span><span><b>MAX</b><small>Написать</small></span></a>
+            <a class="messenger" data-site="tg-link"><span class="messenger__ico messenger__ico--tg"><svg viewBox="0 0 24 24"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg></span><span><b>Telegram</b><small>Написать</small></span></a>
+            <a class="messenger" data-site="tgchannel-link"><span class="messenger__ico messenger__ico--ch"><svg viewBox="0 0 24 24"><path d="M4 9v6h3l6 4V5L7 9z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg></span><span><b>Telegram-канал</b><small>Наши работы и новости</small></span></a>
+          </div>
+          <div class="contacts__maps">
+            <a class="btn btn--light" data-site="yandex-link" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+            <a class="btn btn--outline-light" data-site="google-link" target="_blank" rel="noopener">Открыть в Google Картах</a>
+          </div>
+        </div>
+        <div class="contacts__map" id="map">
+          <div class="map__fallback">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="20" r="5"/></svg>
+            <p data-site="address">г. Москва, ул. Промышленная, 1</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> <span data-site="name">Альянс ЮГ</span></span>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <!-- Кнопки внизу экрана на телефоне -->
+  <div class="mobile-bar">
+    <a data-site="phone-link">Позвонить</a>
+    <a data-site="max-link" class="mobile-bar__max">MAX</a>
+    <a data-site="tg-link" class="mobile-bar__tg">Telegram</a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
