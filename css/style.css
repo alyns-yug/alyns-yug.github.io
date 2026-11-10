@@ -203,6 +203,14 @@ div.work__img::after { content: "Фото работы"; font-family: var(--mono
 .service__link { margin-top: auto; padding-top: 22px; font-weight: 600; font-size: 15px; color: var(--ink); }
 .service__link:hover { color: var(--accent); }
 
+/* ---------- Список в карточке услуги ---------- */
+.service__list { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; color: var(--muted); font-size: 16px; }
+.service__list li { padding-left: 14px; position: relative; }
+.service__list li::before { content: ""; position: absolute; left: 0; top: .65em; width: 6px; height: 6px; background: var(--accent); }
+.service__list b { color: var(--ink); font-weight: 600; }
+html[data-theme="yellow"] .service__list li::before { background: #111; }
+html[data-theme="yellow"] .service:hover .service__list { color: #111; }
+
 /* ---------- Почему мы ---------- */
 .section--tight { padding-top: 0; }
 .why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
