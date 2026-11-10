@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Oswald:wght@500;600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/themes.css">
   <script src="js/config.js"></script>
@@ -19,8 +20,7 @@
   <header class="header" id="top">
     <div class="container header__inner">
       <a href="#top" class="logo">
-        <!-- Сюда позже вставим ваш логотип: <img src="images/logo.svg" alt="Логотип"> -->
-        <span class="logo__mark" aria-hidden="true"></span>
+        <svg class="logo__icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M95 50L72.5 89L27.5 89L5 50L27.5 11L72.5 11Z" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"></path><path class="logo__edge" d="M74 89H26" stroke-width="9"></path><path d="M31 76L50 26L69 76M38 60H62" fill="none" stroke="currentColor" stroke-width="10" stroke-linejoin="miter"></path></svg>
         <span class="logo__text" data-site="name">Альянс ЮГ</span>
       </a>
       <nav class="nav" id="nav">
@@ -97,7 +97,7 @@
           <article class="service">
             <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 36h36"/><path d="M14 36l10-14 10 14"/><path d="M24 22V8M20 12l4-4 4 4"/><circle cx="24" cy="28" r="2"/></svg>
             <h3>Сварочные работы</h3>
-            <p>Сварка чёрных и нержавеющих сталей, алюминия. Металлоконструкции, рамы, корпуса, узлы.</p>
+            <p>Аргоном — для нержавейки и алюминия, лазером — тонкий аккуратный шов, полуавтоматом — прочные рамы и металлоконструкции.</p>
             <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
           </article>
           <article class="service">
@@ -116,6 +116,18 @@
             <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 14h32v26H8z"/><path d="M8 24h32"/><path d="M18 6v14M30 6v14"/><path d="M16 32c2-2 4 2 6 0s4 2 6 0 4 2 6 0"/></svg>
             <h3>Гальваника</h3>
             <p>Гальванические покрытия для защиты от коррозии и улучшения внешнего вида деталей.</p>
+            <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
+          </article>
+          <article class="service">
+            <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="8"/><path d="M10 18v4h28v-4"/><path d="M4 34h40"/><path d="M14 22v12M34 22v12"/></svg>
+            <h3>Резка ленточной пилой</h3>
+            <p>Нарезка трубы, профиля, круга, уголка и балки в размер. Ровный рез, быстро, большими партиями.</p>
+            <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
+          </article>
+          <article class="service">
+            <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 6h14v14H6zM28 6h14v14H28zM6 28h14v14H6z"/><path d="M28 35h14M35 28v14"/></svg>
+            <h3>Изделия под ключ</h3>
+            <p>Берём весь цикл: резка, обработка, сварка и покрытие. Вы получаете готовое изделие от одного подрядчика.</p>
             <a class="service__link" data-site="tg-link">Рассчитать стоимость →</a>
           </article>
         </div>
@@ -271,6 +283,18 @@
           <article class="machine">
             <div class="machine__photo ph"><span>Фото станка</span></div>
             <div class="machine__body">
+              <h3>Ленточнопильный станок</h3>
+              <p class="machine__model mono">[Модель]</p>
+              <p class="machine__spec">Режет трубу, профиль, круг, уголок и балку точно в размер. Максимальное сечение [___ × ___] мм, рез под углом до [__]°.</p>
+              <p class="machine__parts-title mono">Детали, сделанные на этом оборудовании</p>
+              <div class="machine__parts">
+                <div class="ph ph--sm"></div><div class="ph ph--sm"></div><div class="ph ph--sm"></div>
+              </div>
+            </div>
+          </article>
+          <article class="machine">
+            <div class="machine__photo ph"><span>Фото станка</span></div>
+            <div class="machine__body">
               <h3>Токарные станки ЧПУ</h3>
               <p class="machine__model mono">[Модель]</p>
               <p class="machine__spec">Диаметр обработки до [___] мм · длина до [___] мм</p>
@@ -296,8 +320,12 @@
             <div class="machine__photo ph"><span>Фото станка</span></div>
             <div class="machine__body">
               <h3>Сварочный участок</h3>
-              <p class="machine__model mono">[Оборудование]</p>
-              <p class="machine__spec">[MIG/MAG, TIG, полуавтомат] · чёрная сталь, нержавейка, алюминий</p>
+              <p class="machine__model mono">[Аппараты]</p>
+              <ul class="machine__list">
+                <li><b>Аргонная сварка</b> — аккуратный, ровный и герметичный шов. Для нержавейки, алюминия и деталей, где важен внешний вид.</li>
+                <li><b>Лазерная сварка</b> — тонкий, почти незаметный шов. Металл не ведёт и не перегревается, подходит для тонкого листа.</li>
+                <li><b>Полуавтомат (сварка в углекислом газе)</b> — быстро и прочно. Для чёрной стали: рамы, каркасы, металлоконструкции.</li>
+              </ul>
               <p class="machine__parts-title mono">Детали, сделанные на этом оборудовании</p>
               <div class="machine__parts">
                 <div class="ph ph--sm"></div><div class="ph ph--sm"></div><div class="ph ph--sm"></div>
@@ -384,7 +412,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span>© <span id="year"></span> <span data-site="name">Альянс ЮГ</span></span>
+      <span class="footer__brand"><svg class="logo__icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M95 50L72.5 89L27.5 89L5 50L27.5 11L72.5 11Z" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="miter"></path><path class="logo__edge" d="M74 89H26" stroke-width="9"></path><path d="M31 76L50 26L69 76M38 60H62" fill="none" stroke="currentColor" stroke-width="10" stroke-linejoin="miter"></path></svg><span>© <span id="year"></span> <span data-site="name">Альянс ЮГ</span></span></span>
       <a href="#top">Наверх ↑</a>
     </div>
   </footer>

@@ -116,11 +116,11 @@ p { margin: 0; }
 
 /* ---------- Услуги ---------- */
 .services {
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line); border-left: 1px solid var(--line);
 }
 .service {
-  padding: 36px 32px 40px;
+  padding: 32px 26px 34px;
   border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
   background: var(--bg);
   transition: background .25s;
@@ -294,6 +294,16 @@ img.machine__photo { display: block; }
 .machine__parts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
 .machine__parts > * { aspect-ratio: 1 / 1; width: 100%; object-fit: cover; display: block; }
 .machine__parts img { border: 1px solid var(--line); }
+
+/* ---------- Логотип ---------- */
+.logo__icon { width: 36px; height: 36px; flex: none; color: var(--ink); }
+.logo__edge { stroke: var(--accent); }
+.footer__brand { display: flex; align-items: center; gap: 10px; }
+.footer__brand .logo__icon { width: 24px; height: 24px; color: #fff; }
+.machine__list { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; color: var(--muted); }
+.machine__list li { padding-left: 16px; position: relative; }
+.machine__list li::before { content: ""; position: absolute; left: 0; top: .7em; width: 6px; height: 6px; background: var(--accent); }
+.machine__list b { color: var(--ink); }
 
 /* ---------- Подвал ---------- */
 .footer { background: var(--dark); color: #8c8c8c; border-top: 1px solid #2c2d2f; font-size: 14px; }

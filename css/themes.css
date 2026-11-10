@@ -324,3 +324,7 @@ html[data-theme="yellow"] .machine h3 { font-size: 26px; }
 html[data-theme="yellow"] .machine__model { display: inline-block; align-self: flex-start; background: #111; color: #ffcc00; padding: 3px 8px; }
 html[data-theme="yellow"] .machine .ph { border-color: #c9c5b8; }
 @media (max-width: 760px) { html[data-theme="yellow"] .machine__photo { border-width: 0 0 2px 0; } }
+
+/* Логотип в промышленном стиле: белый на чёрной шапке */
+html[data-theme="yellow"] .logo__icon { color: #fff; }
+html[data-theme="yellow"] .machine__list li::before { background: #111; }
